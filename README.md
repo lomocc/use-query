@@ -1,6 +1,6 @@
 # use-query
 
-支持同步或异步方法的 `useEffect`（`useEffect` with Asyn & Sync）
+`useState` to fetch data
 
 ## Install
 
@@ -11,13 +11,9 @@
 ### Default
 
 ```js
-import usePromiseEffect from 'use-query';
+import useQuery from 'use-query';
 
-usePromiseEffect(async () => {
-    await fetch('...');
-    ...
-    return ()=>{
-        // do cancel
-    };
+let { loading, data, error } = useQuery(async () => {
+  return fetch('...');
 });
 ```
